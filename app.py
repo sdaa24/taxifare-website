@@ -3,6 +3,10 @@ import requests
 from datetime import datetime
 import folium
 from streamlit_folium import st_folium
+import streamlit as st
+import os
+
+api_key = st.secrets.get("google", {}).get("api_key") or os.getenv("GOOGLE_API_KEY")
 
 st.set_page_config(page_title="🚕 Smart Taxi Fare Predictor", layout="centered")
 st.title("🚕 Smart Taxi Fare Predictor")
